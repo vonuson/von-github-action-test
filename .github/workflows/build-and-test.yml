@@ -1,0 +1,27 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests
+
+name: Lint and test
+
+on:
+    pull_request:
+        branches: ['main']
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+            - name: Use Node.js
+              uses: actions/setup-node@v3
+              with:
+                  node-version: '18.x'
+            - name: Install dependencies
+              run: npm ci
+            - name: Lint
+              run: npx nx lint-all
+            - name: Test
+              env:
+                  NODE_OPTIONS: '--max_old_space_size=4096'
+              run: npx nx test-all
