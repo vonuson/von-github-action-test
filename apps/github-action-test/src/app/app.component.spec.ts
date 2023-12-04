@@ -24,4 +24,10 @@ describe('AppComponent', () => {
     const app = fixture.componentInstance;
     expect(app.title).toEqual('github-action-test');
   });
+
+
+  it('should fail on github actions', () => {
+    // this is to test github actions, would fail the PR
+    expect(true).toBeFalsy();
+  });
 });
