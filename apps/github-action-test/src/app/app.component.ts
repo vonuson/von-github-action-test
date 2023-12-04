@@ -5,7 +5,7 @@ import { NxWelcomeComponent } from './nx-welcome.component';
 @Component({
   standalone: true,
   imports: [NxWelcomeComponent, RouterModule],
-  selector: 'github-action-test-root',
+  selector: 'github-Action-test-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
